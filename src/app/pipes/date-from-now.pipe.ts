@@ -3,7 +3,7 @@ import * as moment from 'moment';
 
 @Pipe({ name: 'dateFromNow' })
 export class DateFromNowPipe implements PipeTransform {
-  transform(value) {
+  transform(value: any) {
     moment.locale('es');
     const dateLinking = moment(value * 1000);
     const now = moment();
