@@ -10,39 +10,7 @@ import { Color, Label } from 'ng2-charts';
 export class ChartComponent implements OnInit {
   @Input() lineChartData: ChartDataSets[];
   @Input() lineChartLabels: Label[];
-  // public lineChartData: ChartDataSets[] = [
-  //   {
-  //     data: [
-  //       697.64,
-  //       665.9,
-  //       683.73,
-  //       678.71,
-  //       709.8,
-  //       709.8,
-  //       704.88,
-  //       724.2,
-  //       729.38,
-  //       735.05,
-  //       828.25,
-  //       812.13
-  //     ],
-  //     label: 'Series A'
-  //   }
-  // ];
-  // public lineChartLabels: Label[] = [
-  //   'Enero',
-  //   'Febrero',
-  //   'Marzo',
-  //   'Abril',
-  //   'Mayo',
-  //   'Junio',
-  //   'Julio',
-  //   'Agosto',
-  //   'Septiembre',
-  //   'Octubre',
-  //   'Noviembre',
-  //   'Diciembre'
-  // ];
+  // Configurations Chart
   public lineChartOptions: any & { annotation: any } = {
     responsive: true
   };
@@ -55,6 +23,7 @@ export class ChartComponent implements OnInit {
   public lineChartLegend = true;
   public lineChartType = 'line';
   public lineChartPlugins = [];
+  // End configurations
   constructor() {}
 
   ngOnInit(): void {}
