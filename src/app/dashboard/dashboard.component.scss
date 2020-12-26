@@ -1,0 +1,44 @@
+.dashboard {
+  max-width: var(--wrapper);
+  margin: 0 auto;
+  width: 90%;
+  padding: 2rem 0;
+  &-title {
+    font-size: 1.325rem;
+    font-weight: var(--semi-bold);
+    color: var(--secondary);
+    margin-bottom: 1.5rem;
+  }
+  &-chart {
+    max-width: 750px;
+    .field {
+      &-label {
+        display: block;
+        margin-bottom: 0.325rem;
+        font-weight: var(--semi-bold);
+        font-size: 0.875rem;
+        color: var(--secondary);
+      }
+      &-select {
+        width: 100%;
+        padding: 0.625rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--secondary);
+        outline: none;
+        font-size: 0.875rem;
+      }
+    }
+    .fields {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      .field {
+        flex-grow: 1;
+        width: 100px;
+        &:first-of-type {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+<section class="dashboard">
+  <h1 class="dashboard-title">Indicadores financieros</h1>
+  <div class="dashboard-chart">
+    <div class="fields">
+      <div class="field">
+        <label class="field-label">Indicador</label>
+        <select [(ngModel)]="indicatorInput" (change)="changeIndicator()" class="field-select">
+          <option [value]="null" hidden>Seleccionar...</option>
+          <option value="dolar">Dolar</option>
+          <option value="cobre">Cobre</option>
+          <option value="euro">Euro</option>
+          <option value="ipc">Ipc</option>
+          <option value="ivp">Ivp</option>
+          <option value="oro">Oro</option>
+          <option value="plata">Plata</option>
+          <option value="uf">UF</option>
+          <option value="utm">UTM</option>
+          <option value="yen">Yen</option>
+        </select>
+      </div>
+      <div class="field">
+        <label class="field-label">Año</label>
+        <select [(ngModel)]="year" (change)="changeIndicator()" class="field-select">
+          <option [value]="null" hidden>Seleccionar...</option>
+          <option value="2020">2020</option>
+          <option value="2019">2019</option>
+        </select>
+      </div>
+    </div>
+    <app-chart [lineChartData]="chartData" [lineChartLabels]="chartLabel"></app-chart>
+  </div>
+</section>

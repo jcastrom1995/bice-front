@@ -1,0 +1,17 @@
+<div *ngIf="!lineChartData && !lineChartLabels" class="loading">
+  <app-loading></app-loading>
+</div>
+
+<div *ngIf="lineChartData && lineChartLabels" class="chart">
+  <canvas
+    baseChart
+    [datasets]="lineChartData"
+    [labels]="lineChartLabels"
+    [options]="lineChartOptions"
+    [colors]="lineChartColors"
+    [legend]="lineChartLegend"
+    [chartType]="lineChartType"
+    [plugins]="lineChartPlugins"
+  >
+  </canvas>
+</div>
