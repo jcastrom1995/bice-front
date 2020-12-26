@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { AsideComponent } from './aside/aside.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ChartComponent } from './dashboard/chart/chart.component';
-import { IndicatorServices } from './services';
+import { IndicatorServices, ManageErrorService } from './services';
 import { ChartsModule } from 'ng2-charts';
 import { LoadingComponent } from './loading/loading.component';
 import { CardComponent } from './dashboard/card/card.component';
 import { DateFromNowPipe } from './pipes';
+import { SnackbarComponent } from './snackbar/snackbar.component';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { DateFromNowPipe } from './pipes';
     ChartComponent,
     LoadingComponent,
     CardComponent,
-    DateFromNowPipe
+    DateFromNowPipe,
+    SnackbarComponent
   ],
   imports: [
     BrowserModule,
@@ -30,9 +33,10 @@ import { DateFromNowPipe } from './pipes';
     HttpClientJsonpModule,
     ChartsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    IvyCarouselModule
   ],
-  providers: [IndicatorServices],
+  providers: [IndicatorServices, ManageErrorService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

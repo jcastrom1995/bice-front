@@ -1,13 +1,22 @@
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
 .dashboard {
   max-width: var(--wrapper);
-  margin: 0 auto;
   width: 90%;
   padding: 2rem 0;
+  margin: 0 auto;
   &-title {
     font-size: 1.325rem;
     font-weight: var(--semi-bold);
     color: var(--secondary);
     margin-bottom: 1.5rem;
+  }
+  &-indicators-mob {
+    display: none;
   }
   &-indicators {
     display: grid;
@@ -32,6 +41,7 @@
         border: 1px solid var(--secondary);
         outline: none;
         font-size: 0.875rem;
+        background: none;
       }
     }
     .fields {
@@ -43,6 +53,50 @@
         width: 100px;
         &:first-of-type {
           margin-right: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .dashboard {
+    &-indicators {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .dashboard {
+    &-indicators {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .dashboard {
+    &-indicators {
+      display: none;
+    }
+    &-indicators-mob {
+      display: block;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .dashboard {
+    &-indicators-mob {
+      display: block;
+    }
+    &-chart {
+      .fields {
+        display: block;
+        .field {
+          width: 100%;
+          margin-bottom: 1rem;
         }
       }
     }

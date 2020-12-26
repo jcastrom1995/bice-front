@@ -1,0 +1,60 @@
+.snackbar {
+  position: fixed;
+  background: #fff;
+  border-radius: 0.5rem;
+  bottom: 1rem;
+  right: 1rem;
+  width: 400px;
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transform: translateY(10rem);
+  transition: 0.3s transform ease;
+  z-index: 10;
+  &.snackbar--active {
+    transform: translateY(0);
+  }
+  .content {
+    position: relative;
+    padding: 1rem;
+    &-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 0.875rem;
+      color: var(--secondary);
+      border: none;
+      background: #fff;
+      margin: 0;
+      padding: 0;
+      outline: none;
+      cursor: pointer;
+    }
+    &-title {
+      color: var(--secondary);
+      display: flex;
+      align-items: center;
+      margin: 0 0 1rem 0;
+      padding: 0;
+      .check {
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        background: #3aa662;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 0.5rem 0 0;
+        &.check--error {
+          background: #c42d3f;
+          &::before {
+            content: '\e903';
+          }
+        }
+      }
+    }
+    &-description {
+      color: var(--secondary);
+    }
+  }
+}

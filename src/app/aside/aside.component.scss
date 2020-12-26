@@ -50,3 +50,39 @@
     cursor: pointer;
   }
 }
+
+@media screen and (max-width: 1310px) {
+  .aside {
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+    padding: 0.5rem 2rem;
+    &-user {
+      margin: 0;
+    }
+    &-nav {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 89%;
+    }
+    &-logout {
+      top: 50%;
+      transform: translateY(-50%);
+      left: 93%;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .aside {
+    padding: 0.5rem 1rem;
+    &-nav {
+      left: 83%;
+    }
+    &-logout {
+      left: 90%;
+    }
+  }
+}

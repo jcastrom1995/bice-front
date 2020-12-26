@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ChartDataSets } from 'chart.js';
 import { Label } from 'ng2-charts';
 import { IndicatorI, IndicatorsI } from '../models';
-import { IndicatorServices } from '../services';
+import { IndicatorServices, ManageErrorService } from '../services';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,13 +10,17 @@ import { IndicatorServices } from '../services';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  public firstTime = true;
   public indicators: IndicatorI;
   public indicator: IndicatorsI;
   public chartData: ChartDataSets[];
   public chartLabel: Label[];
   public year = '2020';
   public indicatorInput = 'dolar';
-  constructor(private indicatorService: IndicatorServices) {}
+  constructor(
+    private indicatorService: IndicatorServices,
+    private manageErrorSerivce: ManageErrorService
+  ) {}
 
   ngOnInit(): void {
     this.callIndicator(this.indicatorInput, this.year);
@@ -24,7 +28,6 @@ export class DashboardComponent implements OnInit {
     this.indicatorService.getIndicators().subscribe(
       (res: IndicatorI) => {
         this.indicators = res;
-        console.log(res.data);
       },
       (err) => console.log(err)
     );
@@ -39,6 +42,7 @@ export class DashboardComponent implements OnInit {
   callIndicator(indicator: string, year: string): void {
     this.indicatorService.getIndicator(indicator, year).subscribe(
       (res: IndicatorsI) => {
+        this.firstTime = false;
         this.indicator = res;
         this.chartData = [
           {
@@ -49,7 +53,7 @@ export class DashboardComponent implements OnInit {
         this.chartLabel = this.indicator.data.information.months;
       },
       (err) => {
-        console.log(err);
+        this.manageErrorSerivce.activeSnackbar();
       }
     );
   }

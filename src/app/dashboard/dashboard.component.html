@@ -1,7 +1,23 @@
-<section class="dashboard">
+<div class="loading" *ngIf="firstTime">
+  <app-loading></app-loading>
+</div>
+<section class="dashboard" *ngIf="!firstTime">
   <h1 class="dashboard-title">Indicadores financieros</h1>
   <div class="dashboard-indicators" *ngIf="indicators">
     <app-card *ngFor="let item of indicators.data | keyvalue" [indicator]="item.value"></app-card>
+  </div>
+  <div class="dashboard-indicators-mob">
+    <carousel
+      [transitionDuration]="600"
+      [height]="140"
+      [cellsToShow]="1"
+      [arrows]="false"
+      [autoplay]="true"
+    >
+      <div class="carousel-cell" *ngFor="let item of indicators.data | keyvalue">
+        <app-card [indicator]="item.value"></app-card>
+      </div>
+    </carousel>
   </div>
   <div class="dashboard-chart">
     <div class="fields">

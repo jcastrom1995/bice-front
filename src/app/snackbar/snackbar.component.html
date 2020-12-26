@@ -1,0 +1,10 @@
+<section class="snackbar" [class.snackbar--active]="snackbar && snackbar.status">
+  <article class="content" *ngIf="snackbar">
+    <button class="content-close icon-x" type="button" (click)="closeSnackbar()"></button>
+    <h4 class="content-title">
+      <span class="check icon-check" [class.check--error]="snackbar.errorMode"></span>
+      {{ snackbar.title }}
+    </h4>
+    <p class="content-description">{{ snackbar.message }}</p>
+  </article>
+</section>
