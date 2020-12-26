@@ -1,5 +1,8 @@
 <section class="dashboard">
   <h1 class="dashboard-title">Indicadores financieros</h1>
+  <div class="dashboard-indicators" *ngIf="indicators">
+    <app-card *ngFor="let item of indicators.data | keyvalue" [indicator]="item.value"></app-card>
+  </div>
   <div class="dashboard-chart">
     <div class="fields">
       <div class="field">

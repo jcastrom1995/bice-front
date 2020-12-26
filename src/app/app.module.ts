@@ -10,6 +10,8 @@ import { ChartComponent } from './dashboard/chart/chart.component';
 import { IndicatorServices } from './services';
 import { ChartsModule } from 'ng2-charts';
 import { LoadingComponent } from './loading/loading.component';
+import { CardComponent } from './dashboard/card/card.component';
+import { DateFromNowPipe } from './pipes';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { LoadingComponent } from './loading/loading.component';
     AsideComponent,
     DashboardComponent,
     ChartComponent,
-    LoadingComponent
+    LoadingComponent,
+    CardComponent,
+    DateFromNowPipe
   ],
   imports: [
     BrowserModule,

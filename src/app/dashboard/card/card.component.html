@@ -1,0 +1,44 @@
+<article
+  class="card"
+  [ngClass]="{
+    green:
+      indicator.key === 'dolar' ||
+      indicator.key === 'euro' ||
+      indicator.key === 'yen' ||
+      indicator.key === 'uf' ||
+      indicator.key === 'utm',
+    blue: indicator.key === 'oro' || indicator.key === 'plata' || indicator.key === 'cobre',
+    orange: indicator.key === 'ivp',
+    purple: indicator.key === 'ipc'
+  }"
+>
+  <header class="card-header">
+    <h5 class="title">{{ indicator.key }}</h5>
+    <span class="type">
+      <span class="type--info">Tipo valor: </span>
+      {{ indicator.unit }}
+    </span>
+  </header>
+  <div class="card-body">
+    <span
+      [ngClass]="{
+        'icon-dollar-sign':
+          indicator.key === 'dolar' ||
+          indicator.key === 'euro' ||
+          indicator.key === 'yen' ||
+          indicator.key === 'uf' ||
+          indicator.key === 'utm',
+        'icon-feather':
+          indicator.key === 'oro' || indicator.key === 'plata' || indicator.key === 'cobre',
+        'icon-globe': indicator.key === 'ivp',
+        'icon-bar-chart': indicator.key === 'ipc'
+      }"
+      class="icon"
+    ></span>
+    <span class="value">{{ indicator.value }}</span>
+  </div>
+  <footer class="card-footer">
+    <span class="date">Fecha último registro:</span>
+    <span class="value">{{ indicator.date | dateFromNow }}</span>
+  </footer>
+</article>

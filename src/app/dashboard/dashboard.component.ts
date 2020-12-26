@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartDataSets } from 'chart.js';
 import { Label } from 'ng2-charts';
-import { IndicatorsI } from '../models';
+import { IndicatorI, IndicatorsI } from '../models';
 import { IndicatorServices } from '../services';
 
 @Component({
@@ -10,6 +10,7 @@ import { IndicatorServices } from '../services';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  public indicators: IndicatorI;
   public indicator: IndicatorsI;
   public chartData: ChartDataSets[];
   public chartLabel: Label[];
@@ -21,8 +22,9 @@ export class DashboardComponent implements OnInit {
     this.callIndicator(this.indicatorInput, this.year);
 
     this.indicatorService.getIndicators().subscribe(
-      (res) => {
-        console.log(res);
+      (res: IndicatorI) => {
+        this.indicators = res;
+        console.log(res.data);
       },
       (err) => console.log(err)
     );

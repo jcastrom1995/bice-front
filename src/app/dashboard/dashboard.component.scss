@@ -9,6 +9,12 @@
     color: var(--secondary);
     margin-bottom: 1.5rem;
   }
+  &-indicators {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
   &-chart {
     max-width: 750px;
     .field {
