@@ -1,0 +1,10 @@
+<section class="box_shadow" *ngIf="openModal">
+  <div class="box_shadow-modal" [style.width]="width + 'px'">
+    <div class="close_cnt">
+      <button type="button" class="close" *ngIf="!disableClose" (click)="clickClose()">
+        <span class="icon icon-x"></span>
+      </button>
+    </div>
+    <ng-content></ng-content>
+  </div>
+</section>

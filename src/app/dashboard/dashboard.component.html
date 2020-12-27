@@ -3,10 +3,14 @@
 </div>
 <section class="dashboard" *ngIf="!firstTime">
   <h1 class="dashboard-title">Indicadores financieros</h1>
+  <!-- Indicators -->
   <div class="dashboard-indicators" *ngIf="indicators">
     <app-card *ngFor="let item of indicators.data | keyvalue" [indicator]="item.value"></app-card>
   </div>
-  <div class="dashboard-indicators-mob">
+  <!-- End Indicators -->
+
+  <!-- Indicators view responsive -->
+  <div *ngIf="indicators" class="dashboard-indicators-mob">
     <carousel
       [transitionDuration]="600"
       [height]="140"
@@ -19,6 +23,9 @@
       </div>
     </carousel>
   </div>
+  <!-- End Indicators view responsive -->
+
+  <!-- Chart -->
   <div class="dashboard-chart">
     <div class="fields">
       <div class="field">
@@ -48,4 +55,5 @@
     </div>
     <app-chart [lineChartData]="chartData" [lineChartLabels]="chartLabel"></app-chart>
   </div>
+  <!-- End Chart -->
 </section>

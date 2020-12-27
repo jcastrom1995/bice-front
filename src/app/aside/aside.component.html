@@ -5,5 +5,12 @@
   <nav class="aside-nav">
     <a routerLink="/dashboard" class="link icon-bar-chart"></a>
   </nav>
-  <button class="aside-logout icon-log-out"></button>
+  <button (click)="toggleModal()" class="aside-logout icon-log-out"></button>
 </aside>
+
+<app-modal (closeModal)="toggleModal()" *ngIf="modal" [openModal]="true">
+  <section class="thanks">
+    <h2 class="thanks-title">¡Muchas Gracias!</h2>
+    <h4 class="thanks-made">Made with &#10084;&#65039;by Javier Castro</h4>
+  </section>
+</app-modal>

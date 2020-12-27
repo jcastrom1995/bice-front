@@ -48,6 +48,30 @@
     padding: 0.5rem;
     border-radius: 50%;
     cursor: pointer;
+    outline: none;
+  }
+}
+
+.thanks {
+  position: relative;
+  height: 275px;
+  &-title {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #575757;
+    font-weight: var(--semi-bold);
+  }
+  &-made {
+    position: absolute;
+    bottom: 1.325rem;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    color: #575757;
   }
 }
 

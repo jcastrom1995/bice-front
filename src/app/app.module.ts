@@ -14,6 +14,7 @@ import { CardComponent } from './dashboard/card/card.component';
 import { DateFromNowPipe } from './pipes';
 import { SnackbarComponent } from './snackbar/snackbar.component';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
     LoadingComponent,
     CardComponent,
     DateFromNowPipe,
-    SnackbarComponent
+    SnackbarComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

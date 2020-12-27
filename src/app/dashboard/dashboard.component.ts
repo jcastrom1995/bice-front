@@ -24,12 +24,11 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.callIndicator(this.indicatorInput, this.year);
-
     this.indicatorService.getIndicators().subscribe(
       (res: IndicatorI) => {
         this.indicators = res;
       },
-      (err) => console.log(err)
+      () => this.manageErrorSerivce.activeSnackbar()
     );
   }
 
@@ -52,7 +51,7 @@ export class DashboardComponent implements OnInit {
         ];
         this.chartLabel = this.indicator.data.information.months;
       },
-      (err) => {
+      () => {
         this.manageErrorSerivce.activeSnackbar();
       }
     );

@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./aside.component.scss']
 })
 export class AsideComponent implements OnInit {
+  public modal = false;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  toggleModal() {
+    this.modal = !this.modal;
+    document.body.style.overflowY = this.modal ? 'hidden' : 'auto';
   }
-
 }

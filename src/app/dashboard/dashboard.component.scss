@@ -82,15 +82,14 @@
     }
     &-indicators-mob {
       display: block;
+      position: relative;
+      z-index: 1;
     }
   }
 }
 
 @media screen and (max-width: 640px) {
   .dashboard {
-    &-indicators-mob {
-      display: block;
-    }
     &-chart {
       .fields {
         display: block;
